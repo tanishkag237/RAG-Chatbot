@@ -5,10 +5,10 @@ from langchain_community.llms import HuggingFacePipeline
 from langchain.chains import RetrievalQA
 
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-vectorstore = Chroma(persist_directory="chroma_db2", embedding_function=embedding_model)
+vectorstore = Chroma(persist_directory="chroma_db", embedding_function=embedding_model)
 
 hf_pipeline = pipeline(
-    "text2text-generation",  # for FLAN-T5 models
+    "text2text-generation",  
     model="MBZUAI/LaMini-Flan-T5-783M",  # or flan-t5-small
     max_new_tokens=256,
     temperature=0.2
@@ -24,4 +24,4 @@ while True:
     if query.lower() == "exit":
         break
     result = rag_chain.invoke({"query": query})
-    print("\n🧠 Answer:", result["result"], "\n")
+    print("\n Answer:", result["result"], "\n")

@@ -4,8 +4,6 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain_community.document_loaders import UnstructuredMarkdownLoader
 
-
-
 loader = UnstructuredMarkdownLoader("./data/info.md")
 docs = loader.load()
 print(docs[0])
@@ -16,8 +14,6 @@ text_splitter = RecursiveCharacterTextSplitter(
     length_function=len,  
     separators=["\n\n", "\n", " ", ""]  
 )
-
-
 
 chunks = text_splitter.split_documents(docs)
 
