@@ -25,3 +25,5 @@ result = rag_chain.invoke({"query": query}):
 
 Calls the chain with a dict input (invoke returns a dict of outputs).
 For RetrievalQA the chain returns an output key "result" containing the answer string (and sometimes other keys like source_documents depending on config).
+
+// Working for gemini model rn
