@@ -53,4 +53,4 @@ while True:
     if query.lower() == "exit":
         break
     result = rag_chain.invoke({"query": query})
-    print("\n🧠 Answer:", result["result"], "\n")
+    print("\n Answer:", result["result"], "\n")
