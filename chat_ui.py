@@ -3,7 +3,7 @@ from chatbot import getRAGchain
 
 st.title("RAG Chatbot ")
 
-@st.cache_resource
+@st.cache_resource # to cache the loaded chain
 def load_chain():
     return getRAGchain()
 
