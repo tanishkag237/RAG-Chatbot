@@ -7,7 +7,7 @@ from langchain.chains import RetrievalQA
 
 def getRAGchain():
     embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-    vectorstore = Chroma(persist_directory="chroma_db", embedding_function=embedding_model)
+    vectorstore = Chroma(persist_directory="chroma_db3", embedding_function=embedding_model)
 
     hf_pipeline = pipeline(
         "text2text-generation",
